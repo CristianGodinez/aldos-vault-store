@@ -1,0 +1,3 @@
+import {products} from './seed-products.mjs';
+import {batch} from './db.mjs';
+export async function seed(db){const now=Math.floor(Date.now()/1000);const statements=[];for(const name of [...new Set(products.map(p=>p.category))])statements.push(['INSERT OR IGNORE INTO categories(id,name) VALUES(?,?)',name.toLowerCase(),name]);for(const p of products)statements.push(['INSERT OR IGNORE INTO products(id,category_id,name,description,universe,price_cents,stock,image,image2,tag,condition,edition,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',p.id,p.category.toLowerCase(),p.name,p.description,p.universe,p.price*100,p.stock,p.image,p.image2||null,p.tag,p.condition,p.edition,now]);await batch(db,statements);}

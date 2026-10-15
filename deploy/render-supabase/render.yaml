@@ -1,0 +1,35 @@
+# Copiar este archivo a la raíz del repositorio de despliegue al crear el Blueprint.
+services:
+  - type: web
+    name: aldos-vault
+    runtime: node
+    plan: free
+    region: virginia
+    buildCommand: npm --prefix deploy/render-supabase install --omit=dev
+    startCommand: node deploy/render-supabase/server.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: PGHOST
+        sync: false
+      - key: PGUSER
+        sync: false
+      - key: PGPASSWORD
+        sync: false
+      - key: PGPORT
+        value: 5432
+      - key: PGDATABASE
+        value: postgres
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVER_KEY
+        sync: false
+      - key: SUPABASE_STORAGE_BUCKET
+        value: product-images
+      - key: PAYPAL_MODE
+        value: sandbox
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false

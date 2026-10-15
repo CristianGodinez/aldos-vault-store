@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11120f" />
+    <meta
+      name="description"
+      content="Aldo’s Vault. Coleccionables, minifiguras y piezas extraordinarias. Explora la colección y encuentra tu próxima pieza."
+    />
+    <title>Aldo’s Vault — Objetos extraordinarios</title>
+    <link rel="stylesheet" href="./styles.css" /><link rel="stylesheet" href="./commerce.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2311120f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-size='42' fill='%23d2e594'%3EA%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div class="announcement">
+      UNA COLECCIÓN FUERA DE LO ORDINARIO <span>·</span> SAN LUIS POTOSÍ, MX
+    </div>
+    <header>
+      <a class="brand" href="#/" aria-label="Aldo’s Vault inicio"
+        >ALDO’S <span>VAULT<span class="brand-dot">®</span></span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="#/catalogo">La colección</a
+        ><a href="#/encargos">Piezas por encargo <span>↗</span></a>
+      <a href="#/cuenta" id="account-link">Mi cuenta</a><a href="#/admin" id="admin-link" hidden>Administración</a></nav>
+      <a class="bag" href="#/carrito" aria-label="Ver carrito"
+        >Carrito <span id="cart-count">0</span></a
+      >
+    </header>
+    <main id="app" aria-busy="true"><div class="page loading-screen"><span class="spinner"></span><p>Abriendo la bóveda…</p></div></main>
+    <footer>
+      <a class="brand" href="#/">ALDO’S <span>VAULT®</span></a>
+      <p>
+        Para coleccionistas. Por coleccionistas.<br /><span
+          >San Luis Potosí, México</span
+        >
+      </p>
+      <div>
+        <a href="#/catalogo">Explorar colección ↗</a
+        ><a href="#/encargos">Solicitar una pieza ↗</a><a href="#/informacion">Compra, privacidad y entregas</a>
+      </div>
+      <small
+        >© 2026 Aldo’s Vault · Proyecto académico · Pagos de prueba en PayPal Sandbox.</small
+      >
+    </footer>
+    <dialog id="modal"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
